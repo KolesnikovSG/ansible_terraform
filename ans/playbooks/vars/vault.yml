@@ -1,0 +1,5 @@
+---
+
+db_user: todo_user
+db_password: postgres
+db_name: todo_db
