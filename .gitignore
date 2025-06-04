@@ -1,2 +1,4 @@
-pass.vault-password
 *.vault-password
+*.tfstate
+*.tfstate.*
+
