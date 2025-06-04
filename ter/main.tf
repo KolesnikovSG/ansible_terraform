@@ -7,7 +7,7 @@ data "template_file" "user_data" {
 
 resource "libvirt_volume" "ubuntu_qcow2" {
   name   = "${var.vm_name}-disk.qcow2"
-  pool   = "default" # Имя пула Libvirt (проверьте `virsh pool-list`)
+  pool   = "default" 
   source = "https://cloud-images.ubuntu.com/focal/current/focal-server-cloudimg-amd64-disk-kvm.img"
   format = "qcow2"
 }
@@ -31,7 +31,7 @@ resource "libvirt_domain" "todo_vm" {
   cloudinit = libvirt_cloudinit_disk.cloudinit.id
 
   network_interface {
-    network_name = "default" # Имя сети Libvirt (`virsh net-list`)
+    network_name = "default" 
   }
 
   console {
