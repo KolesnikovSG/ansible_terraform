@@ -6,7 +6,7 @@
     - vars/vault.yml
 
   roles:
-    - security
-    - app
-    - database
+   # - security
+   # - app
+   # - database
     - webserver
