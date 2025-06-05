@@ -1,4 +1,15 @@
----
+---    
+
+- name: Установить системные зависимости для psycopg2
+  apt:
+    name:
+      - python3-dev
+      - libpq-dev
+      - postgresql-client
+    state: present
+    update_cache: yes
+  become: yes
+  
 - name: Install PostgreSQL
   apt:
     name:
