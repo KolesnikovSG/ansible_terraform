@@ -1,7 +1,7 @@
 ---
-- name: Update apt
-  apt: 
-    update_cache: yes
+#- name: Update apt
+#  apt: 
+#    update_cache: yes
 
 - name: Install nginx
   apt:

@@ -9,5 +9,5 @@
     - security
     - apt
     - app
-   # - database
+    - database
     - webserver

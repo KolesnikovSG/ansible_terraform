@@ -1,8 +1,8 @@
 ---
-- name: Update system
-  apt:
-    update_cache: yes
-    upgrade: dist
+#- name: Update system
+#  apt:
+#    update_cache: yes
+#    upgrade: dist
 
 - name: Install automatic updates
   apt:

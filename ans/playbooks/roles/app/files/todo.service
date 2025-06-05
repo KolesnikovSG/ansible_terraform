@@ -7,7 +7,7 @@ User=root
 Group=root
 Type=simple
 Restart=always
-ExecStart=/opt/venv/bin/python3 /opt/Todo-back-main/manage.py runserver
+ExecStart=/opt/venv/bin/python3 /opt/manage.py runserver
 
 [Install]
 WantedBy=multi-user.target

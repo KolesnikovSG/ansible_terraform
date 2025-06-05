@@ -10,8 +10,18 @@
 
 - name: Install Python dependencies
   pip:
-    requirements: /opt/todo-backend/requirements.txt
+    requirements: /opt/requirements.txt
     executable: pip3
+    
+- name: Install pip requirements
+  pip:
+    requirements: /opt/requirements.txt
+    virtualenv: "{{ venv_dir }}"
+    virtualenv_command: "{{ ansible_python_interpreter }} -m venv"
+    state: present
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+    venv_dir: /opt/venv
 
 #- name: Create environment file for backend
 #  template:

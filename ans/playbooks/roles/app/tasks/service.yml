@@ -3,6 +3,12 @@
   copy:
     src: todo.service
     dest: /etc/systemd/system/todo.service
-  notify:
-    - Reload systemd
-    - Starting service todo
+    
+- name: Reload systemd daemon
+  command: systemctl daemon-reload
+
+- name: Start and enable todo service
+  service:
+    name: todo.service
+    state: restarted
+    enabled: true
