@@ -5,8 +5,9 @@
   vars_files:
     - vars/vault.yml
 
-  roles:
-   # - security
-   # - app
+  roles: 
+    - security
+    - apt
+    - app
    # - database
     - webserver

@@ -1,0 +1,8 @@
+---
+- name: Creating systemd service todo.service
+  copy:
+    src: todo.service
+    dest: /etc/systemd/system/todo.service
+  notify:
+    - Reload systemd
+    - Starting service todo

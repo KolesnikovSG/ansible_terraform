@@ -1,23 +1,5 @@
 ---    
 
-- name: Установить системные зависимости для psycopg2
-  apt:
-    name:
-      - python3-dev
-      - libpq-dev
-      - postgresql-client
-    state: present
-    update_cache: yes
-  become: yes
-  
-- name: Install PostgreSQL
-  apt:
-    name:
-      - postgresql
-      - postgresql-contrib
-      - libpq-dev
-    state: present
-
 - name: Create PostgreSQL user
   postgresql_user:
     name: "{{ db_user }}"
@@ -27,5 +9,18 @@
 - name: Create database
   postgresql_db:
     name: "{{ db_name }}"
+    port: "{{ db_port }}"
     owner: "{{ db_user }}"
     state: present
+    
+- name: Grant ALL privileges to db_user
+  postgresql_privs:
+    type: database
+    database: "{{ db_name }}"
+    roles: "{{ db_user }}"
+    privs: ALL
+    grant_option: yes
+
+
+
+

@@ -1,17 +1,12 @@
 ---
-- name: Create backend directory
-  file:
-    path: /opt/todo-backend
-    state: directory
-    mode: 0755
 
 - name: Copy backend files to server
   copy:
-    src: files/Todo-back-main/  # Копируем всю папку
-    dest: /opt/todo-backend/
-    owner: qsyoma
-    group: qsyoma
-    mode: 0644
+    src: files/Todo-back-main/  
+    dest: /opt/
+    owner: root
+    group: root
+    mode: 0755
 
 - name: Install Python dependencies
   pip:

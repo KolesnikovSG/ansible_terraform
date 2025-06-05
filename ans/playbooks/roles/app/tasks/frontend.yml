@@ -1,17 +1,12 @@
 ---
-- name: Create frontend directory
-  file:
-    path: /opt/todo-frontend
-    state: directory
-    mode: 0755
 
 - name: Copy frontend files to server
   copy:
     src: files/Todo-front-main/
-    dest: /opt/todo-frontend/
-    owner: qsyoma
-    group: qsyoma
-    mode: 0644
+    dest: /opt/
+    owner: root
+    group: root
+    mode: 0755
 
 #- name: Install Node.js dependencies (если нужно)
 #  command: npm install
