@@ -3,7 +3,7 @@ from dotenv import load_dotenv
 from pathlib import Path
 
 # Load environment variables from .env file
-load_dotenv()
+load_dotenv('/opt/backend.env')
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -12,12 +12,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/5.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = os.getenv('SECRET_KEY')
+SECRET_KEY = 'tyhfnc-ik2678jsn-9-8765hlvnaufnc-ik2678jsn-9-8765hlvnau'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'api.t3.academy.dunice-testing.com']
+ALLOWED_HOSTS = ['213.171.25.115']
 
 # Application definition
 
@@ -75,11 +75,11 @@ WSGI_APPLICATION = 'todoback.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': os.getenv('NAME'),
-        'USER': os.getenv('USER'),
-        'PASSWORD': os.getenv('PASSWORD'),
-        'HOST': os.getenv('HOST'),
-        'PORT': os.getenv('PORT'), 
+        'NAME': 'todo_db',
+        'USER': 'todo_user',
+        'PASSWORD': 'postgres',
+        'HOST': 'localhost',
+        'PORT': '5432', 
     }
 }
 

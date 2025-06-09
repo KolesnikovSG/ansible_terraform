@@ -7,7 +7,7 @@ User=root
 Group=root
 Type=simple
 Restart=always
-ExecStart=/opt/venv/bin/python3 /opt/manage.py runserver
+ExecStart=/opt/venv/bin/python3 /opt/manage.py runserver 0.0.0.0:8000
 
 [Install]
 WantedBy=multi-user.target

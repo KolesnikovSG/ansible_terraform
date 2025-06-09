@@ -3,7 +3,7 @@ server {
     server_name {{ server_name | default('localhost') }};
 
     location / {
-        root /opt/todo-frontend;
+        root /opt;
         index index.html index.htm;
         try_files $uri $uri/ /index.html;
     }

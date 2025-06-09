@@ -4,3 +4,4 @@ db_user: todo_user
 db_password: postgres
 db_port: 5432
 db_name: todo_db
+db_host: localhost
