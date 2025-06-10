@@ -33,7 +33,7 @@ resource "libvirt_domain" "todo_vm" {
   network_interface {
     network_name = "default" 
   }
-
+#
   console {
     type        = "pty"
     target_port = "0"
