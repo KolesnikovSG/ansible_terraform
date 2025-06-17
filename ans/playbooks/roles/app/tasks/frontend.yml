@@ -1,0 +1,10 @@
+---
+
+- name: Copy frontend files to server
+  copy:
+    src: files/Todo-front-main/
+    dest: /opt/
+    owner: root
+    group: root
+    mode: 0755
+

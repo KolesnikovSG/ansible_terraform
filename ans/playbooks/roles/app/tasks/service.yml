@@ -1,0 +1,14 @@
+---
+- name: Creating systemd service todo.service
+  copy:
+    src: todo.service
+    dest: /etc/systemd/system/todo.service
+    
+- name: Reload systemd daemon
+  command: systemctl daemon-reload
+
+- name: Start and enable todo service
+  service:
+    name: todo.service
+    state: restarted
+    enabled: true

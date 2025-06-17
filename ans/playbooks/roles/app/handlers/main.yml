@@ -1,0 +1,9 @@
+---
+- name: Reload systemd 
+  command: systemctl daemon-reload
+
+- name: Starting service todo
+  service:
+    name: todo.service
+    enabled: true
+    state: restarted

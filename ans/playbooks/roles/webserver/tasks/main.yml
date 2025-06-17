@@ -1,0 +1,12 @@
+---
+- name: Install Nginx
+  apt:
+    name: nginx
+    state: latest
+    
+- name: Copy nginx site config file
+  copy:
+    src: nginx_site_config
+    dest: /etc/nginx/sites-available/default
+  notify: reload nginx
+

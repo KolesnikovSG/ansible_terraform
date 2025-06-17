@@ -1,0 +1,13 @@
+---
+- name: Deploy Todo App
+  hosts: all
+  become: true
+  vars_files:
+    - vars/vault.yml
+
+  roles: 
+    - security
+    - apt
+    - app
+    - database
+    - webserver

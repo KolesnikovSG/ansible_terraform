@@ -1,0 +1,29 @@
+---
+- name: Install automatic updates
+  apt:
+    name: unattended-upgrades
+    state: present
+
+- name: Allow SSH
+  ufw:
+    rule: allow
+    port: 22
+
+- name: Enable UFW
+  ufw:
+    state: enabled
+    policy: deny
+
+- name: Allow HTTP/HTTPS
+  ufw:
+    rule: allow
+    port: "{{ item }}"
+  with_items:
+    - 80
+    - 443
+    
+- name: install pip3
+  apt: 
+    name: python3-pip 
+    state: present 
+    

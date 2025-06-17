@@ -1,0 +1,39 @@
+---
+
+- name: Copy backend files to server
+  copy:
+    src: files/Todo-back-main/  
+    dest: /opt/
+    owner: root
+    group: root
+    mode: 0755
+    
+- name: Generate .env file from template
+  template:
+    src: backend.env.j2
+    dest: "/opt/backend.env"
+    owner: root
+    group: root
+    mode: 0640
+
+- name: Install Python dependencies
+  pip:
+    requirements: /opt/requirements.txt
+    executable: pip3
+    
+- name: Install pip requirements
+  pip:
+    requirements: /opt/requirements.txt
+    virtualenv: "{{ venv_dir }}"
+    virtualenv_command: "{{ ansible_python_interpreter }} -m venv"
+    state: present
+  vars:
+    ansible_python_interpreter: /usr/bin/python3
+    venv_dir: /opt/venv
+
+- name: Run - python3 manage.py migrate
+  shell: /opt/venv/bin/python3 manage.py migrate
+  register: out
+  args:
+    chdir: /opt/
+
