@@ -37,18 +37,3 @@
   args:
     chdir: /opt/
 
-#- name: Create environment file for backend
-#  template:
-#    src: templates/backend.env.j2
-#    dest: /opt/todo-backend/.env 
-
-#- name: Apply Django migrations
-#  command: python3 manage.py migrate
-#  args:
-#    chdir: /opt/todo-backend/
-
-#- name: Setup Gunicorn service
-#  template:
-#    src: templates/gunicorn.service.j2
-#    dest: /etc/systemd/system/gunicorn.service
-#  notify: restart gunicorn

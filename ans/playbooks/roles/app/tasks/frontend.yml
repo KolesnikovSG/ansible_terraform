@@ -8,14 +8,3 @@
     group: root
     mode: 0755
 
-#- name: Install Node.js dependencies (если нужно)
-#  command: npm install
-#  args:
-#    chdir: /opt/todo-frontend/
-#  when: "'package.json' in lookup('file', '/opt/todo-#frontend/package.json')"
-
-#- name: Build frontend (если нужно)
-#  command: npm run build
-#  args:
-#    chdir: /opt/todo-frontend/
-#  when: "'package.json' in lookup('file', '/opt/todo-frontend/package.json')"
