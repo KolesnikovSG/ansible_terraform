@@ -1,5 +1,5 @@
 *.vault-password
 *.tfstate
 *.tfstate.*
-*.terraform
+*.terraform*
 *.cfg
